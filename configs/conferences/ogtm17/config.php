@@ -47,7 +47,7 @@ $CONFIG['CONFERENCE'] = array(
 	 * Wird für den <meta name="description">-Tag verdet. Wird diese Zeile auskommentiert, wird kein solcher
 	 * <meta>-Tag generiert.
 	 */
-  'DESCRIPTION' => 'Open Government Tag München 2017',
+  //'DESCRIPTION' => 'Open Government Tag München 2017',
 
 	/**
 	 * Schlüsselwortliste, Kommasepariert
@@ -106,8 +106,8 @@ $CONFIG['OVERVIEW'] = array(
 	 * sonst werden sie nicht angezeigt.
 	 */
 	'GROUPS' => array(
-		'' => array(
-			'stream',
+		'Lecture Rooms' => array(
+			'HdG',
 		),
 	),
 );
@@ -130,7 +130,7 @@ $CONFIG['ROOMS'] = array(
 		/**
 		 * Angezeige-Name
 		 */
-		'DISPLAY' => 'OGTM17',
+		'DISPLAY' => 'Altes Rathaus',
 
 		/**
 		 * ID des Video/Audio-Streams. Die Stream-ID ist davon abhängig, welches
