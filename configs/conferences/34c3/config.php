@@ -571,8 +571,7 @@ $CONFIG['SCHEDULE'] = array(
 	 *
 	 * Wird diese Zeile auskommentiert, werden alle Räume angezeigt
 	 */
-# TODO check, Namen ermitteln
-#	'ROOMFILTER' => array('Saal A', 'Saal B', 'Saal C', 'Saal D'),
+	'ROOMFILTER' => array('Saal Adams', 'Saal Borg', 'Saal Clarke', 'Saal Dijkstra'),
 
 	/**
 	 * Skalierung der Programm-Vorschau in Sekunden pro Pixel
