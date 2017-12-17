@@ -30,10 +30,10 @@
 
 	<div class="directlinks">
 
-		<? foreach(Stream::getAudioProtos() as $proto => $display): ?>
+		<? $switcherstream = $room->createStreamObject('music') ?>
+		<? foreach($switcherstream->getAudioProtos() as $proto => $display): ?>
 			<h3>Direct links (<?=h($display)?>)</h3>
 			<div class="row">
-				<? $switcherstream = $room->createStreamObject('music') ?>
 				<div class="col-lg-3 col-md-4 col-lg-5 col-xs-12">
 					<div class="btn-group" role="group" title="<?=h($switcherstream->getAudioTech($proto))?>">
 						<div class="btn btn-primary" disabled><?=h($selection->getDisplay())?></div>

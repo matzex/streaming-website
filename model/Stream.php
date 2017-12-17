@@ -128,10 +128,10 @@ class Stream
 		switch($proto)
 		{
 			case 'webm':
-				return proto().'://cdn.c3voc.de/'.rawurlencode($this->getRoom()->getStream()).'_'.rawurlencode($this->getLanguage()).'_'.rawurlencode($this->getSelection()).'.webm';
+				return $this->getCdnBaseUrl().'/'.rawurlencode($this->getRoom()->getStream()).'_'.rawurlencode($this->getLanguage()).'_'.rawurlencode($this->getSelection()).'.webm';
 
 			case 'hls':
-				return proto().'://cdn.c3voc.de/hls/'.rawurlencode($this->getRoom()->getStream()).'_'.rawurlencode($this->getLanguage()).'_'.rawurlencode($this->getSelection()).'.m3u8';
+				return $this->getCdnBaseUrl().'/hls/'.rawurlencode($this->getRoom()->getStream()).'_'.rawurlencode($this->getLanguage()).'_'.rawurlencode($this->getSelection()).'.m3u8';
 		}
 
 		return null;
@@ -193,10 +193,8 @@ class Stream
 		switch($proto)
 		{
 			case 'mp3':
-				return proto().'://cdn.c3voc.de/'.rawurlencode($this->getRoom()->getStream()).'_'.rawurlencode($this->getLanguage()).'.mp3';
-
 			case 'opus':
-				return proto().'://cdn.c3voc.de/'.rawurlencode($this->getRoom()->getStream()).'_'.rawurlencode($this->getLanguage()).'.opus';
+				return $this->getCdnBaseUrl().'/'.rawurlencode($this->getRoom()->getStream()).'_'.rawurlencode($this->getLanguage()).'.'.$proto;
 		}
 
 		return null;
@@ -214,12 +212,19 @@ class Stream
 
 		return null;
 	}
-	public static function getAudioProtos()
+	public function getAudioProtos()
 	{
-		return array(
-			'mp3' => 'MP3',
-			'opus' => 'Opus',
-		);
+		if ($this->getRoom()->hasMp3Audio()) {
+			return array(
+				'mp3' => 'MP3',
+				'opus' => 'Opus',
+			);
+		}
+		else {
+			return array(
+				'opus' => 'Opus',
+			);
+		}
 	}
 
 	public function getMusicUrl($proto)
@@ -227,10 +232,8 @@ class Stream
 		switch($proto)
 		{
 			case 'mp3':
-				return proto().'://cdn.c3voc.de/'.rawurlencode($this->getRoom()->getStream()).'.mp3';
-
 			case 'opus':
-				return proto().'://cdn.c3voc.de/'.rawurlencode($this->getRoom()->getStream()).'.opus';
+				return $this->getCdnBaseUrl().'/'.rawurlencode($this->getRoom()->getStream()).'.'.$proto;
 
 			default:
 				return null;
@@ -249,6 +252,11 @@ class Stream
 
 		return null;
 	}
+
+	private function getCdnBaseUrl() {
+		return $this->getRoom()->getCdnBaseUrl();
+	}
+
 	public static function getMusicProtos()
 	{
 		return array(

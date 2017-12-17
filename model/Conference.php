@@ -242,4 +242,8 @@ class Conference extends ModelBase
 	public function getAdditionalHtml() {
 		return $this->get('CONFERENCE.ADDITIONAL_HTML');
 	}
+
+	public function getCdnBaseUrl() {
+		return $this->get('CONFERENCE.CDN_BASE_URL', proto() . '://cdn.c3voc.de');
+	}
 }

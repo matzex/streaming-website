@@ -4,10 +4,12 @@
 	style="width: 300px;"
 	class="mejs"
 >
-	<source
-		src="<?=h($stream->getAudioUrl('mp3'))?>"
-		type="audio/mp3"
-	/>
+	<? if(array_key_exists('mp3', $stream->getAudioProtos())): ?>
+		<source
+			src="<?=h($stream->getAudioUrl('mp3'))?>"
+			type="audio/mp3"
+		/>
+	<? endif ?>
 	<source
 		src="<?=h($stream->getAudioUrl('opus'))?>"
 		type="audio/opus"

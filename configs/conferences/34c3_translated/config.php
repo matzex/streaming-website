@@ -2,6 +2,11 @@
 
 $CONFIG['CONFERENCE'] = array(
 	/**
+	 * Customize the base stream URL, without slash at the end
+	 */
+	'CDN_BASE_URL' => 'http://cdn.c3voc.de',
+
+	/**
 	 * Der Startzeitpunkt der Konferenz als Unix-Timestamp. Befinden wir uns davor, wird die Closed-Seite
 	 * mit einem Text der Art "hat noch nicht angefangen" angezeigt.
 	 *
@@ -119,7 +124,7 @@ $CONFIG['OVERVIEW'] = array(
 	 * sonst werden sie nicht angezeigt.
 	 */
 	'GROUPS' => array(
-		'Live' => array(
+		'Local' => array(
 			'halla',
 			'hallb',
 			'hallc',
@@ -251,6 +256,11 @@ $CONFIG['ROOMS'] = array(
 		'AUDIO' => true,
 
 		/**
+		 * Kein Mp3 Audio Stream verfügbar, default true
+		 */
+		'AUDIO_MP3' => false,
+
+		/**
 		 * Musik-Stream verfügbar
 		 *
 		 * Wenn diese Zeile auskommentiert oder auf false gesetzt ist ẃird kein Musik-Stream
@@ -338,7 +348,7 @@ $CONFIG['ROOMS'] = array(
 		 * Ebenso können alle IRC-Links durch auskommentieren
 		 * des globalen $CONFIG['IRC']-Blocks deaktiviert werden
 		 */
-		'IRC' => false,
+		'IRC' => true,
 
 		/**
 		* Mit dem Angaben in diesem Block können die Vorgaben aus dem
@@ -379,6 +389,12 @@ $CONFIG['ROOMS'] = array(
 			'DISPLAY' => '#halla @ twitter',
 			'TEXT'    => '#34C3 #halla',
 		),
+
+		/**
+		 * Select this switcher entry by default when using the overview link,
+		 * uses the first switcher entry if none was given
+		 */
+		'DEFAULT_SELECTION' => 'i18n/translated#switcher',
 	),
 
 	'hallb' => array(
@@ -394,6 +410,7 @@ $CONFIG['ROOMS'] = array(
 		'HD_VIDEO' => false,
 		'DASH' => false,
 		'AUDIO' => true,
+		'AUDIO_MP3' => false,
 		'SLIDES' => false,
 		'MUSIC' => false,
 
@@ -413,6 +430,7 @@ $CONFIG['ROOMS'] = array(
 			'DISPLAY' => '#hallb @ twitter',
 			'TEXT'    => '#34C3 #hallb',
 		),
+		'DEFAULT_SELECTION' => 'i18n/translated#switcher',
 	),
 
 	'hallc' => array(
@@ -428,6 +446,7 @@ $CONFIG['ROOMS'] = array(
 		'HD_VIDEO' => false,
 		'DASH' => false,
 		'AUDIO' => true,
+		'AUDIO_MP3' => false,
 		'SLIDES' => false,
 		'MUSIC' => false,
 
@@ -447,6 +466,7 @@ $CONFIG['ROOMS'] = array(
 			'DISPLAY' => '#hallc @ twitter',
 			'TEXT'    => '#34C3 #hallc',
 		),
+		'DEFAULT_SELECTION' => 'i18n/translated#switcher',
 	),
 
 	'halld' => array(
@@ -461,6 +481,7 @@ $CONFIG['ROOMS'] = array(
 		'HD_VIDEO' => false,
 		'DASH' => false,
 		'AUDIO' => true,
+		'AUDIO_MP3' => false,
 		'SLIDES' => false,
 		'MUSIC' => false,
 
@@ -480,6 +501,7 @@ $CONFIG['ROOMS'] = array(
 			'DISPLAY' => '#halld @ twitter',
 			'TEXT'    => '#34C3 #halld',
 		),
+		'DEFAULT_SELECTION' => 'i18n/translated#switcher',
 	),
 );
 

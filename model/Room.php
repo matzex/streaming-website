@@ -32,7 +32,12 @@ class Room
 	}
 
 	public function getLink() {
-		return joinpath([$this->getConference()->getSlug(), $this->getSlug()]).url_params();
+		if ($this->hasDefaultSelection()) {
+			return joinpath([$this->getConference()->getSlug(), $this->getSlug(), $this->getDefaultSelection()]) . url_params();
+		}
+		else {
+			return joinpath([$this->getConference()->getSlug(), $this->getSlug()]).url_params();
+		}
 	}
 
 	public function getStream() {
@@ -79,9 +84,16 @@ class Room
 		return $this->getConference()->get('ROOMS.'.$this->getSlug().'.FEEDBACK') && $this->getConference()->has('FEEDBACK');
 	}
 
-
 	public function hasTwitter() {
 		return $this->getConference()->get('ROOMS.'.$this->getSlug().'.TWITTER') && $this->getConference()->has('TWITTER');
+	}
+
+	public function hasDefaultSelection() {
+		return $this->getConference()->has('ROOMS.'.$this->getSlug().'.DEFAULT_SELECTION');
+	}
+
+	public function getDefaultSelection() {
+		return $this->getConference()->get('ROOMS.'.$this->getSlug().'.DEFAULT_SELECTION');
 	}
 
 	public function getTwitterDisplay() {
@@ -151,6 +163,10 @@ class Room
 		return $this->getConference()->get('ROOMS.'.$this->getSlug().'.AUDIO');
 	}
 
+	public function hasMp3Audio() {
+		return $this->getConference()->get('ROOMS.'.$this->getSlug().'.AUDIO_MP3', true);
+	}
+
 	public function hasSlides() {
 		return $this->getConference()->get('ROOMS.'.$this->getSlug().'.SLIDES');
 	}
@@ -164,11 +180,11 @@ class Room
 	}
 
 	public function getHLSPlaylistUrl() {
-		return proto().'://cdn.c3voc.de/hls/'.rawurlencode($this->getStream()).'_native.m3u8';
+		$this->getCdnBaseUrl().'/hls/'.rawurlencode($this->getStream()).'_native.m3u8';
 	}
 
 	public function getDashManifestUrl() {
-		return proto().'://cdn.c3voc.de/dash/'.rawurlencode($this->getStream()).'/manifest.mpd';
+		$this->getCdnBaseUrl().'/dash/'.rawurlencode($this->getStream()).'/manifest.mpd';
 	}
 
 	public function getDashTech() {
@@ -364,5 +380,9 @@ class Room
 			$language = 'stereo';
 
 		return new Stream($this, $selection, $language, $languageLabel);
+	}
+
+	public function getCdnBaseUrl() {
+		return $this->getConference()->getCdnBaseUrl();
 	}
 }
