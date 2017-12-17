@@ -127,7 +127,11 @@ $CONFIG['OVERVIEW'] = array(
 			'hallb',
 			'hallc',
 			'halld',
+		),
+
+		'Specials' => array(
 			'c3tv',
+			'4k',
 		),
 
 		'Live Music'  => array(
@@ -519,6 +523,34 @@ $CONFIG['ROOMS'] = array(
 		),
 	),
 
+	'4k' => array(
+		'DISPLAY' => '4k',
+		'STREAM' => 'sX', # TODO fix
+		'PREVIEW' => true, # TODO check / run downloader on transcorder
+		'TRANSLATION' => false,
+		'SD_VIDEO' => false,
+		'HD_VIDEO' => true,
+		'DASH' => false,
+		'AUDIO' => false,
+		'SLIDES' => false,
+		'MUSIC' => false,
+
+		'SCHEDULE' => true,
+		'SCHEDULE_NAME' => 'Saal Dijkstra',
+		'FEEDBACK' => true,
+		'SUBTITLES' => false,
+		'SUBTITLES_ROOM_ID' => 2,
+		'EMBED' => false,
+		'IRC' => false,
+		'TWITTER' => false,
+		'TWITTER_CONFIG' => array(
+			'DISPLAY' => '#halld #4k @ twitter',
+			'TEXT'    => '#34C3 #halld #4k',
+		),
+	),
+
+
+
 
 # TODO check namen
 	'fresswuerfel' => array(
@@ -586,6 +618,7 @@ $CONFIG['SCHEDULE'] = array(
 	 */
 	//'SIMULATE_OFFSET' => strtotime(/* Conference-Date */ '2016-12-27') - strtotime(/* Today */ date('Y-m-d')),
 	//'SIMULATE_OFFSET' => 0,
+	'SIMULATE_OFFSET' => strtotime(/* Conference-Date */ '2017-12-28') - strtotime(/* Today */ date('Y-m-d')),
 );
 
 
