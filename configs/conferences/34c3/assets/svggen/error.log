@@ -1,0 +1,66 @@
+34c3_streaming.svg
+beta.svg
+feedback.svg
+info.svg
+live_music.svg
+live.svg
+specials.svg
+recordings.svg
+releases.svg
+tls.svg
+relive.svg
+34c3_streaming.svg
+Warning: Font face with same CSS values already added: 3 The Hard Way Overrun Normal (Regular, Regular)
+WARNING: ignoring verb FitCanvasToDrawing - GUI required for this verb.
+
+** (inkscape:22398): CRITICAL **: static void Inkscape::FitCanvasVerb::perform(SPAction*, void*): assertion 'ensure_desktop_valid(action)' failed
+beta.svg
+Warning: Font face with same CSS values already added: 3 The Hard Way Overrun Normal (Regular, Regular)
+WARNING: ignoring verb FitCanvasToDrawing - GUI required for this verb.
+
+** (inkscape:22430): CRITICAL **: static void Inkscape::FitCanvasVerb::perform(SPAction*, void*): assertion 'ensure_desktop_valid(action)' failed
+feedback.svg
+Warning: Font face with same CSS values already added: 3 The Hard Way Overrun Normal (Regular, Regular)
+WARNING: ignoring verb FitCanvasToDrawing - GUI required for this verb.
+
+** (inkscape:22463): CRITICAL **: static void Inkscape::FitCanvasVerb::perform(SPAction*, void*): assertion 'ensure_desktop_valid(action)' failed
+info.svg
+Warning: Font face with same CSS values already added: 3 The Hard Way Overrun Normal (Regular, Regular)
+WARNING: ignoring verb FitCanvasToDrawing - GUI required for this verb.
+
+** (inkscape:22495): CRITICAL **: static void Inkscape::FitCanvasVerb::perform(SPAction*, void*): assertion 'ensure_desktop_valid(action)' failed
+live_music.svg
+Warning: Font face with same CSS values already added: 3 The Hard Way Overrun Normal (Regular, Regular)
+WARNING: ignoring verb FitCanvasToDrawing - GUI required for this verb.
+
+** (inkscape:22528): CRITICAL **: static void Inkscape::FitCanvasVerb::perform(SPAction*, void*): assertion 'ensure_desktop_valid(action)' failed
+live.svg
+Warning: Font face with same CSS values already added: 3 The Hard Way Overrun Normal (Regular, Regular)
+WARNING: ignoring verb FitCanvasToDrawing - GUI required for this verb.
+
+** (inkscape:22560): CRITICAL **: static void Inkscape::FitCanvasVerb::perform(SPAction*, void*): assertion 'ensure_desktop_valid(action)' failed
+specials.svg
+Warning: Font face with same CSS values already added: 3 The Hard Way Overrun Normal (Regular, Regular)
+WARNING: ignoring verb FitCanvasToDrawing - GUI required for this verb.
+
+** (inkscape:22592): CRITICAL **: static void Inkscape::FitCanvasVerb::perform(SPAction*, void*): assertion 'ensure_desktop_valid(action)' failed
+recordings.svg
+Warning: Font face with same CSS values already added: 3 The Hard Way Overrun Normal (Regular, Regular)
+WARNING: ignoring verb FitCanvasToDrawing - GUI required for this verb.
+
+** (inkscape:22625): CRITICAL **: static void Inkscape::FitCanvasVerb::perform(SPAction*, void*): assertion 'ensure_desktop_valid(action)' failed
+releases.svg
+Warning: Font face with same CSS values already added: 3 The Hard Way Overrun Normal (Regular, Regular)
+WARNING: ignoring verb FitCanvasToDrawing - GUI required for this verb.
+
+** (inkscape:22657): CRITICAL **: static void Inkscape::FitCanvasVerb::perform(SPAction*, void*): assertion 'ensure_desktop_valid(action)' failed
+tls.svg
+Warning: Font face with same CSS values already added: 3 The Hard Way Overrun Normal (Regular, Regular)
+WARNING: ignoring verb FitCanvasToDrawing - GUI required for this verb.
+
+** (inkscape:22689): CRITICAL **: static void Inkscape::FitCanvasVerb::perform(SPAction*, void*): assertion 'ensure_desktop_valid(action)' failed
+relive.svg
+Warning: Font face with same CSS values already added: 3 The Hard Way Overrun Normal (Regular, Regular)
+WARNING: ignoring verb FitCanvasToDrawing - GUI required for this verb.
+
+** (inkscape:22721): CRITICAL **: static void Inkscape::FitCanvasVerb::perform(SPAction*, void*): assertion 'ensure_desktop_valid(action)' failed
