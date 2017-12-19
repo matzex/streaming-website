@@ -50,7 +50,13 @@
 body {
 	padding: @navbar-height 0;
   background-color: @bg;
+
+  /* TODO improve cursor */
+  a[href], input[type='submit'], input[type='image'], label[for], select, button, .pointer {
+    cursor: url("assets/min/phasenpr_cursor_dr.svg"), auto;
+  }
 }
+
 
 nav {
   .navbar-header {
