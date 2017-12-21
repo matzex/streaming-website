@@ -88,10 +88,7 @@ $CONFIG['CONFERENCE'] = array(
 	 *
 	 * Wird diese Zeile auskommentiert, wird kein Banner ausgegeben.
 	 */
-	'BANNER_HTML' => '
-		<h1>34C3: tuwat!</h1>
-		<img src="configs/conferences/34c3/assets/min/logo_beta.svg" width="810px" height="388px" alt="34C3 tuwat logo"/>
-	',
+	'BANNER_HTML' => '<img src="configs/conferences/34c3/assets/min/banner.svg" width="519px" height="auto" alt="tuwat!"/>',
 
 	/**
 	 * Link zu den Recordings

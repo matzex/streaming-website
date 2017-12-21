@@ -53,7 +53,7 @@ body {
 
   /* TODO improve cursor - TODO auf "solid" vorlage basieren */
   a[href], input[type='submit'], input[type='image'], label[for], select, button, .pointer {
-    cursor: url("assets/min/phasenpr_cursor_dr.svg"), auto;
+    cursor: url("assets/min/phasenpr_cursor_wh.svg"), auto;
   }
 
   .banner {
@@ -84,9 +84,12 @@ body {
 }
 
 .panel {
-  background-image: url('assets/min/border.svg');
-	background-repeat: no-repeat;
-	background-position: center;
+    background-color: @lighter-bg;
+    color: white;
+    border-color: #d9d9d9;
+    span, a {
+    color: white;
+    }
 
   &.panel-default {
     background-color: @lighter-bg;
@@ -224,6 +227,10 @@ nav {
     display: inline-block;
     width: 211px
 	}
+
+  .room .panel-heading {
+    font-weight: bold;
+  }
 }
 
 .nav-tabs {
@@ -271,7 +278,7 @@ body {
     }
 
     h5 {
-      color: #a7a7a7;
+      color: white;
       font-weight: bold;
     }
 
