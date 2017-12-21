@@ -88,7 +88,10 @@ $CONFIG['CONFERENCE'] = array(
 	 *
 	 * Wird diese Zeile auskommentiert, wird kein Banner ausgegeben.
 	 */
-	'BANNER_HTML' => '<img src="configs/conferences/34c3/assets/min/banner.svg" width="519px" height="auto" alt="tuwat!"/>',
+	'BANNER_HTML' => '
+		<h1>34C3: tuwat!</h1>
+		<img src="configs/conferences/34c3/assets/min/logo_beta.svg" width="810px" height="388px" alt="34C3 tuwat logo"/>
+	',
 
 	/**
 	 * Link zu den Recordings
@@ -124,11 +127,7 @@ $CONFIG['OVERVIEW'] = array(
 			'hallb',
 			'hallc',
 			'halld',
-		),
-
-		'Specials' => array(
 			'c3tv',
-			'4k',
 		),
 
 		'Live Music'  => array(
@@ -519,34 +518,6 @@ $CONFIG['ROOMS'] = array(
 			'TEXT'    => '@c3tv_de',
 		),
 	),
-
-	'4k' => array(
-		'STREAM' => 'sX', # TODO fix
-		'DISPLAY' => '4k – Saal Dijkstra',
-		'PREVIEW' => true, # TODO check / run downloader on transcorder
-		'TRANSLATION' => false,
-		'SD_VIDEO' => false,
-		'HD_VIDEO' => true,
-		'DASH' => false,
-		'AUDIO' => false,
-		'SLIDES' => false,
-		'MUSIC' => false,
-
-		'SCHEDULE' => true,
-		'SCHEDULE_NAME' => 'Saal Dijkstra',
-		'FEEDBACK' => true,
-		'SUBTITLES' => false,
-		'SUBTITLES_ROOM_ID' => 2,
-		'EMBED' => false,
-		'IRC' => false,
-		'TWITTER' => false,
-		'TWITTER_CONFIG' => array(
-			'DISPLAY' => '#halld #4k @ twitter',
-			'TEXT'    => '#34C3 #halld #4k',
-		),
-	),
-
-
 
 
 # TODO check namen
