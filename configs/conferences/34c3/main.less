@@ -5,6 +5,7 @@
 @bg: black;
 @lighter-bg: #2B2E34;
 @lighter-bg-font-color: @darkred;
+// phasenpruefer grau d9d9d9
 
 // conference specific styles here
 
@@ -12,7 +13,7 @@
 @text-color:            #fff;
 
 @link-color:            #000;
-@link-hover-color:      brighten(@link-color, 15%);
+@link-hover-color:      lighten(@link-color, 15%);
 
 @navbar-default-color:  @lighter-bg-font-color;
 @navbar-default-bg:     @lighter-bg;
@@ -48,15 +49,35 @@
 // TODO mehr abstand oben
 
 body {
-	padding: @navbar-height 0;
   background-color: @bg;
 
-  /* TODO improve cursor */
+  /* TODO improve cursor - TODO auf "solid" vorlage basieren */
   a[href], input[type='submit'], input[type='image'], label[for], select, button, .pointer {
     cursor: url("assets/min/phasenpr_cursor_dr.svg"), auto;
   }
+
+  .banner {
+    margin: 50px 0 15px 0;
+    text-align: center;
+  }
 }
 
+.panel {
+  background-image: url('assets/min/border.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+
+  &.panel-default {
+    background-color: @lighter-bg;
+    color: white;
+    border-color: #d9d9d9;
+  }
+
+  .panel-heading {
+    color: white;
+    background-color: @lighter-bg;
+  }
+}
 
 nav {
   .navbar-header {
@@ -158,6 +179,10 @@ nav {
 }
 
 .overview {
+  .group h2, .recordings h2 {
+    margin: 25px 0 18px 0;
+  }
+
 	.group-live h2 > span {
 		.svg-replace("assets/min/f-live.svg");
     display: inline-block;
@@ -178,6 +203,101 @@ nav {
     display: inline-block;
     width: 211px
 	}
+}
+
+.nav-tabs {
+  > li > a {
+    font-weight: bold;
+    background-color: @lighter-bg;
+    color: white;
+    border-color: #d9d9d9;
+  }
+
+  > li.active > a {
+    color: white;
+    background-color: @darkred;
+  }
+
+  > li:hover > a {
+    color: white;
+    background-color: lighten(@lighter-bg, 20%);
+  }
+
+  > li.active:hover > a {
+    color: white;
+    background-color: darken(@darkred, 20%);
+  }
+}
+
+body {
+.schedule {
+  .now {
+    background-color: rgba(80,80,80,0.7);
+
+    span {
+    font-weight: bold;
+    color: white;
+    }
+  }
+
+  .room {
+    .block.pause h3 {
+      color: black;
+    }
+
+    h4 {
+      color: white;
+    }
+
+    h5 {
+      color: #a7a7a7;
+      font-weight: bold;
+    }
+
+    &.highlight .block {
+      background-color: #a41c31;
+
+      &.pause h3 {
+        color: white;
+      }
+    }
+  }
+
+  h4 {
+    font-weight: bold;
+  }
+
+  h3 {
+    color: white;
+  }
+}
+}
+
+#switcher {
+  .formats.row, .directlinks .row {
+    /* no the best idea but works for me I guess :\ */
+
+    @media (min-width: @screen-lg-min) {
+      .col-lg-3 {
+        width: 40%;
+      }
+    }
+    @media (min-width: @screen-md-min) {
+      .col-md-4 {
+        width: 48%;
+      }
+    }
+    @media (max-width: @screen-xs-min) {
+      .col-xs-12 {
+        .btn-group {
+          a {
+            display: block;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
 }
 
 .text-replace(@text) {
