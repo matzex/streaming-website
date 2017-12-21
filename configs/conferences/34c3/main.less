@@ -59,6 +59,27 @@ body {
   .banner {
     margin: 50px 0 15px 0;
     text-align: center;
+
+    @media (max-width: @screen-xs-max) {
+      margin-top: 20px;
+
+      img {
+        width: 80%;
+        height: auto;
+      }
+    }
+  }
+
+  .about {
+    a {
+      color: @darkred;
+    }
+  }
+
+  &.multiview {
+    .cell {
+      color: black;
+    }
   }
 }
 
@@ -274,7 +295,25 @@ body {
 }
 
 #switcher {
+    .notes {
+    background-color: @lighter-bg;
+
+    &.well {
+      margin-top: 30px;
+      margin-bottom: 30px;
+
+      h3 {
+        margin-top: initial;
+      }
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
   .formats.row, .directlinks .row {
+
     /* no the best idea but works for me I guess :\ */
 
     @media (min-width: @screen-lg-min) {
