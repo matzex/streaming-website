@@ -521,8 +521,8 @@ $CONFIG['ROOMS'] = array(
 	),
 
 	'4k' => array(
-		'DISPLAY' => '4k',
 		'STREAM' => 'sX', # TODO fix
+		'DISPLAY' => '4k – Saal Dijkstra',
 		'PREVIEW' => true, # TODO check / run downloader on transcorder
 		'TRANSLATION' => false,
 		'SD_VIDEO' => false,
