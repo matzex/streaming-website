@@ -128,7 +128,7 @@ $CONFIG['OVERVIEW'] = array(
 
 		'Specials' => array(
 			'c3tv',
-			'4k',
+//			'4k',
 		),
 
 		'Live Music'  => array(
@@ -520,6 +520,7 @@ $CONFIG['ROOMS'] = array(
 		),
 	),
 
+	/*
 	'4k' => array(
 		'STREAM' => 'sX', # TODO fix
 		'DISPLAY' => '4k – Hall Dijkstra',
@@ -545,6 +546,7 @@ $CONFIG['ROOMS'] = array(
 			'TEXT'    => '#34C3 #halld #4k',
 		),
 	),
+	 */
 
 
 # TODO check namen
