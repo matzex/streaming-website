@@ -1,0 +1,350 @@
+@import "../../../assets/css/_structure.less";
+
+@darkred: rgb(164, 28, 49);
+// darkred: #a41c31
+@bg: black;
+@lighter-bg: #2b2e34;
+@phasenpruefer-gray: #d9d9d9;
+
+@brand-primary:         @darkred;
+@brand-danger: white;
+@text-color:            white;
+
+@link-color:            lighten(@darkred, 15%);
+@link-hover-color:      lighten(@link-color, 15%);
+
+@navbar-default-color:  @darkred;
+@navbar-default-bg:     @lighter-bg;
+
+@navbar-default-link-color:       #fff;
+@navbar-default-link-hover-color: #777;
+
+@panel-border-color: @phasenpruefer-gray;
+@panel-bg: @lighter-bg;
+@panel-font-color: @text-color;
+
+// colors of the schedule ("Fahrplan") widget below the video-player
+//
+// @schedule-now:       @brand-danger;
+@schedule-now-bg:    rgba(80, 80, 80, 0.7);
+@schedule-border:    lighten(@brand-primary, 50%);
+
+@schedule-room:      white;
+@schedule-author:    white;
+
+@schedule-selected-room: @darkred;
+
+@schedule-daychange:    darken(@brand-primary, 20%);
+@schedule-daychange-bg: fade(white, 30%);
+
+@schedule-gap:          darken(@brand-primary, 20%);
+@schedule-gap-bg:       fade(white, 30%);
+
+@schedule-pause:        black;
+@schedule-pause-bg:     white;
+//
+
+@navbar-height: 52px;
+@navbar-content-height: 36px;
+@navbar-content-margin: (@navbar-height - @navbar-content-height) / 2;
+
+// mixin
+.text-replace(@text) {
+  background-image: none;
+  display: inline;
+
+  span {
+    display: none;
+  }
+
+  &::after {
+    content: @text;
+  }
+}
+
+// mixin
+.svg-replace(@file, @width: auto, @height: auto) {
+  background-image: url(@file);
+  background-repeat: no-repeat;
+  background-size: @width @height;
+  color: transparent !important;
+  background-position: center;
+  //
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */
+}
+
+body {
+  background-color: @bg;
+
+  a[href],
+  input[type='submit'],
+  input[type='image'],
+  label[for],
+  select,
+  button,
+  .pointer {
+    cursor: url("assets/min/phasenpr_cursor_wh.svg"), auto;
+  }
+
+  .banner {
+    margin: @navbar-height 0 15px 0;
+    text-align: center;
+
+    @media (max-width: @screen-xs-max) {
+      margin-top: 20px;
+
+      img {
+        width: 80%;
+        height: auto;
+      }
+    }
+  }
+
+  &.multiview {
+    .cell {
+      color: black;
+    }
+  }
+
+  .panel {
+    background-color: @panel-bg;
+    color: @panel-font-color;
+    border-color: @panel-border-color;
+
+    span,
+    a {
+      color: @panel-font-color;
+    }
+
+    &.panel-default {
+      background-color: @panel-bg;
+      color: @panel-font-color;
+      border-color: @panel-border-color;
+    }
+
+    .panel-heading {
+      font-weight: bold;
+      color: @panel-font-color;
+      background-color: @panel-bg;
+    }
+  }
+
+  // display titles also if there is just a preview but no schedule
+  &.overview .room {
+    &.has-preview {
+      .panel-heading {
+        display: block;
+      }
+    }
+  }
+}
+
+nav {
+  .navbar-header {
+    .navbar-brand {
+      .svg-replace("assets/min/f-34c3_translations_streaming.svg");
+
+      width: 634px;
+      height: @navbar-content-height;
+      padding: 0;
+      margin: @navbar-content-margin 0 0 @navbar-content-margin;
+      background-position: 60px 50%;
+
+      .icon {
+        background-image: url("assets/min/voctocat.svg");
+        background-size: @navbar-content-height @navbar-content-height;
+        background-position: 0 50%;
+        width: @navbar-content-height;
+        height: @navbar-content-height;
+        margin: 0 @navbar-content-margin 0 15px;
+      }
+    }
+  }
+
+  // on mobile device, ceneter the font element and remove
+  // the voctocat icon, align utilities icons right
+  @media (max-width: @screen-xs-max) {
+    .navbar-header {
+      .navbar-brand {
+        margin: @navbar-content-margin 0 0 0;
+        background-position: center;
+
+        .icon {
+          display: none;
+        }
+      }
+    }
+
+    .navbar-right {
+      text-align: right;
+    }
+  }
+
+  .button-wrapper {
+    margin: @navbar-content-margin 0 0 0;
+    padding: 0 0 0 15px;
+
+    > .btn {
+      height: @navbar-content-height;
+      padding: 0;
+      margin: 3px 0 0 15px;
+      line-height: 1;
+      background-color: transparent;
+      border: none;
+      font-size: 30px;
+      font-weight: bold;
+      color: @darkred;
+
+      &.btn-ssl {
+        font-size: 23px;
+        padding-top: 5px;
+
+        &.btn-warning {
+          color: lightgray;
+        }
+      }
+    }
+  }
+}
+
+.overview {
+  .group h2,
+  .recordings h2 {
+    margin: 25px 0 18px 0;
+  }
+
+  .group-live h2 > span {
+    .svg-replace("assets/min/f-live_translations_only.svg");
+
+    display: inline-block;
+    width: 491px;
+  }
+
+  .group-specials h2 > span {
+    .svg-replace("assets/min/f-specials.svg");
+
+    display: inline-block;
+    width: 164px;
+  }
+
+  .group-live-music h2 > span {
+    .svg-replace("assets/min/f-live_music.svg");
+
+    display: inline-block;
+    width: 208px;
+  }
+
+  .recordings h2 > span {
+    .svg-replace("assets/min/f-recordings.svg");
+
+    display: inline-block;
+    width: 211px;
+  }
+}
+
+.nav-tabs {
+  > li > a {
+    font-weight: bold;
+    background-color: @lighter-bg;
+    color: white;
+    border-color: @phasenpruefer-gray;
+  }
+
+  > li.active > a {
+    color: white;
+    background-color: @darkred;
+  }
+
+  > li:hover > a {
+    color: white;
+    background-color: lighten(@lighter-bg, 20%);
+  }
+
+  > li.active:hover > a {
+    color: white;
+    background-color: darken(@darkred, 20%);
+  }
+}
+
+#switcher {
+  .notes {
+    background-color: @lighter-bg;
+
+    &.well {
+      margin-top: 30px;
+      margin-bottom: 30px;
+
+      h3 {
+        margin-top: initial;
+      }
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .formats.row,
+  .directlinks .row {
+    /* no the best idea but works for me I guess :\ */
+    @media (min-width: @screen-lg-min) {
+      .col-lg-3 {
+        width: 40%;
+      }
+    }
+
+    @media (min-width: @screen-md-min) {
+      .col-md-4 {
+        width: 48%;
+      }
+    }
+
+    @media (max-width: @screen-xs-min) {
+      .col-xs-12 {
+        .btn-group {
+          a {
+            display: block;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+#schedule {
+  .now span {
+    font-weight: bold;
+  }
+
+  .room {
+    .block {
+      // title
+      h3 {
+        color: white;
+      }
+
+      &.pause h3 {
+        color: @schedule-pause;
+      }
+
+      // time and room
+      h4 {
+        font-weight: bold;
+      }
+
+      // speaker
+      h5 {
+        font-weight: bold;
+      }
+    }
+
+    &.highlight .block.pause h3 {
+      color: white;
+    }
+  }
+}
+
