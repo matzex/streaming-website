@@ -158,7 +158,7 @@ $CONFIG['ROOMS'] = array(
 		/**
 		 * Angezeige-Name
 		 */
-		'DISPLAY' => 'Saal Adams',
+		'DISPLAY' => 'Hall Adams',
 		// Douglas Adams
 
 		/**
@@ -388,13 +388,13 @@ $CONFIG['ROOMS'] = array(
 		* da sonst überhaupt kein IRC-Link erzeugt wird. (ggf. einfach `= true` setzen)
 		*/
 		'TWITTER_CONFIG' => array(
-			'DISPLAY' => '#hallA @ twitter',
-			'TEXT'    => '#34C3 #hallA',
+			'DISPLAY' => '#halla @ twitter',
+			'TEXT'    => '#34C3 #halla',
 		),
 	),
 
 	'hallb' => array(
-		'DISPLAY' => 'Saal Borg',
+		'DISPLAY' => 'Hall Borg',
 		# Anita Borg
 		'STREAM' => 'sX',
 		'PREVIEW' => true,
@@ -428,7 +428,7 @@ $CONFIG['ROOMS'] = array(
 	),
 
 	'hallc' => array(
-		'DISPLAY' => 'Saal Clarke',
+		'DISPLAY' => 'Hall Clarke',
 		# Joan Clarke
 		'STREAM' => 'sX',
 		'PREVIEW' => true,
@@ -462,7 +462,7 @@ $CONFIG['ROOMS'] = array(
 	),
 
 	'halld' => array(
-		'DISPLAY' => 'Saal Dijkstra',
+		'DISPLAY' => 'Hall Dijkstra',
 		# Edsger Dijkstra
 		'STREAM' => 'sX',
 		'PREVIEW' => true,
@@ -522,7 +522,7 @@ $CONFIG['ROOMS'] = array(
 
 	'4k' => array(
 		'STREAM' => 'sX', # TODO fix
-		'DISPLAY' => '4k – Saal Dijkstra',
+		'DISPLAY' => '4k – Hall Dijkstra',
 		'PREVIEW' => true, # TODO check / run downloader on transcorder
 		'TRANSLATION' => false,
 		'SD_VIDEO' => false,
@@ -545,8 +545,6 @@ $CONFIG['ROOMS'] = array(
 			'TEXT'    => '#34C3 #halld #4k',
 		),
 	),
-
-
 
 
 # TODO check namen
@@ -591,9 +589,10 @@ $CONFIG['SCHEDULE'] = array(
 	 * das Script configs/download.sh heruntergeladen, welches von einem
 	 * Cronjob regelmäßig getriggert wird.
 	 */
-	'URL' => 'https://fahrplan.events.ccc.de/congress/2017/Fahrplan/schedule.xml',
+	 'URL' => 'http://data.c3voc.de/34C3/everything.schedule.xml',
+	# alternatives:
+	#'URL' => 'https://fahrplan.events.ccc.de/congress/2017/Fahrplan/schedule.xml',
 	#'URL' => 'https://events.ccc.de/congress/2017/Fahrplan/schedule.xml',
-	#'URL' => 'http://data.c3voc.de/34C3/everything.schedule.xml', # TODO check
 
 	/**
 	 * Nur die angegebenen Räume aus dem Fahrplan beachten
@@ -615,7 +614,6 @@ $CONFIG['SCHEDULE'] = array(
 	 */
 	//'SIMULATE_OFFSET' => strtotime(/* Conference-Date */ '2016-12-27') - strtotime(/* Today */ date('Y-m-d')),
 	//'SIMULATE_OFFSET' => 0,
-	'SIMULATE_OFFSET' => strtotime(/* Conference-Date */ '2017-12-28') - strtotime(/* Today */ date('Y-m-d')),
 );
 
 
@@ -747,7 +745,6 @@ $CONFIG['EXTRA_FILES'] = array(
 	'schedule.ics'  => 'https://fahrplan.events.ccc.de/congress/2017/Fahrplan/schedule.ics',
 	'schedule.xcal' => 'https://fahrplan.events.ccc.de/congress/2017/Fahrplan/schedule.xcal',
 
-# TODO CHECK
 	'everything.schedule.xml' => 'http://data.c3voc.de/34C3/everything.schedule.xml',
 	'everything.schedule.json' => 'http://data.c3voc.de/34C3/everything.schedule.json',
 
