@@ -47,7 +47,7 @@ $CONFIG['CONFERENCE'] = array(
 	 * Dieser im Seiten-Header, im <title>-Tag, in der About-Seite und ggf. ab weiteren Stellen als
 	 * Anzeigetext benutzt
 	 */
-	'TITLE' => '34C3 Inhouse Translations',
+	'TITLE' => '34C3 On-Site Translations',
 
 	/**
 	 * Veranstalter
@@ -93,7 +93,7 @@ $CONFIG['CONFERENCE'] = array(
 	 *
 	 * Wird diese Zeile auskommentiert, wird kein Banner ausgegeben.
 	 */
-	'BANNER_HTML' => '<img src="configs/conferences/34c3/assets/min/banner.svg" width="519px" height="auto" alt="tuwat!"/><br>This page is for in house translations only – please visit <a href="https://streaming.media.ccc.de">streaming.media.ccc.de</a> to see all features.',
+	'BANNER_HTML' => '<img src="configs/conferences/34c3/assets/min/banner.svg" width="519px" height="auto" alt="tuwat!"/><br><p>This page is for on-site translations only – please visit <b><a href="https://streaming.media.ccc.de/34c3/">streaming.media.ccc.de</a></b> to see all features.</p>',
 
 	/**
 	 * Link zu den Recordings
@@ -124,7 +124,7 @@ $CONFIG['OVERVIEW'] = array(
 	 * sonst werden sie nicht angezeigt.
 	 */
 	'GROUPS' => array(
-		'Local' => array(
+		'On-Site Translations' => array(
 			'halla',
 			'hallb',
 			'hallc',

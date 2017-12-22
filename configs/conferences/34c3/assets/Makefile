@@ -7,4 +7,4 @@ min/%.svg : %.svg
 	svgo -i $*.svg -o min/$*.svg
 
 clean:
-	rm $(MINSVGS)
+	rm -f min/*.svg

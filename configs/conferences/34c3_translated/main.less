@@ -77,137 +77,149 @@
 }
 
 body {
-  background-color: @bg;
+	background-color: @bg;
 
-  a[href],
-  input[type='submit'],
-  input[type='image'],
-  label[for],
-  select,
-  button,
-  .pointer {
-    cursor: url("assets/min/phasenpr_cursor_wh.svg"), auto;
-  }
+	// negate the the 120px from structure since we use margin on the
+	// banner instead
+	@media (max-width: @screen-xs-min) {
+		// 5opx is regular padding
+		padding: 70px 0 30px 0;
+	}
 
-  .banner {
-    margin: @navbar-height 0 15px 0;
-    text-align: center;
+	a[href],
+	input[type='submit'],
+	input[type='image'],
+	label[for],
+	select,
+	button,
+	.pointer {
+		cursor: url("assets/min/phasenpr_cursor_wh.svg"), auto;
+	}
 
-    @media (max-width: @screen-xs-max) {
-      margin-top: 20px;
+	.banner {
+		margin: @navbar-height 0 15px 0;
+		text-align: center;
 
-      img {
-        width: 80%;
-        height: auto;
-      }
-    }
-  }
+		// modification for translations page
+		p {
+			margin: 10px;
+		}
 
-  &.multiview {
-    .cell {
-      color: black;
-    }
-  }
+		img {
+			max-width: 80%;
+			height: auto;
+		}
+	}
 
-  .panel {
-    background-color: @panel-bg;
-    color: @panel-font-color;
-    border-color: @panel-border-color;
+	&.multiview {
+		.cell {
+			color: black;
+		}
+	}
 
-    span,
-    a {
-      color: @panel-font-color;
-    }
+	.panel {
+		background-color: @panel-bg;
+		color: @panel-font-color;
+		border-color: @panel-border-color;
 
-    &.panel-default {
-      background-color: @panel-bg;
-      color: @panel-font-color;
-      border-color: @panel-border-color;
-    }
+		span,
+		a {
+			color: @panel-font-color;
+		}
 
-    .panel-heading {
-      font-weight: bold;
-      color: @panel-font-color;
-      background-color: @panel-bg;
-    }
-  }
+		&.panel-default {
+			background-color: @panel-bg;
+			color: @panel-font-color;
+			border-color: @panel-border-color;
+		}
 
-  // display titles also if there is just a preview but no schedule
-  &.overview .room {
-    &.has-preview {
-      .panel-heading {
-        display: block;
-      }
-    }
-  }
+		.panel-heading {
+			font-weight: bold;
+			color: @panel-font-color;
+			background-color: @panel-bg;
+		}
+	}
+
+	// display titles also if there is just a preview but no schedule
+	&.overview .room {
+		&.has-preview {
+			.panel-heading {
+				display: block;
+			}
+		}
+	}
 }
 
 nav {
-  .navbar-header {
-    .navbar-brand {
-      .svg-replace("assets/min/f-34c3_translations_streaming.svg");
+	.navbar-header {
+		.navbar-brand {
+			.svg-replace("assets/min/f-34c3_translations.svg");
 
-      width: 634px;
-      height: @navbar-content-height;
-      padding: 0;
-      margin: @navbar-content-margin 0 0 @navbar-content-margin;
-      background-position: 60px 50%;
+			width: 515px;
+			height: @navbar-content-height;
+			padding: 0;
+			margin: @navbar-content-margin 0 0 @navbar-content-margin;
+			background-position: 60px 50%;
 
-      .icon {
-        background-image: url("assets/min/voctocat.svg");
-        background-size: @navbar-content-height @navbar-content-height;
-        background-position: 0 50%;
-        width: @navbar-content-height;
-        height: @navbar-content-height;
-        margin: 0 @navbar-content-margin 0 15px;
-      }
-    }
-  }
+			.icon {
+				background-image: url("assets/min/voctocat.svg");
+				background-size: @navbar-content-height @navbar-content-height;
+				background-position: 0 50%;
+				width: @navbar-content-height;
+				height: @navbar-content-height;
+				margin: 0 @navbar-content-margin 0 15px;
+			}
+		}
+	}
 
-  // on mobile device, ceneter the font element and remove
-  // the voctocat icon, align utilities icons right
-  @media (max-width: @screen-xs-max) {
-    .navbar-header {
-      .navbar-brand {
-        margin: @navbar-content-margin 0 0 0;
-        background-position: center;
+	// on mobile device, ceneter the font element and remove
+	// the voctocat icon, align utilities icons right
+	@media (max-width: @screen-xs-max) {
+		.navbar-header {
+			.navbar-brand {
+				// modification for translations page
+				.svg-replace("assets/min/f-34c3_i18n.svg");
 
-        .icon {
-          display: none;
-        }
-      }
-    }
+				width: 100%;
+				margin: @navbar-content-margin 0 0 0;
+				background-position: center;
 
-    .navbar-right {
-      text-align: right;
-    }
-  }
+				.icon {
+					display: none;
+				}
+			}
+		}
 
-  .button-wrapper {
-    margin: @navbar-content-margin 0 0 0;
-    padding: 0 0 0 15px;
+		.navbar-right {
+			text-align: right;
+		}
+	}
 
-    > .btn {
-      height: @navbar-content-height;
-      padding: 0;
-      margin: 3px 0 0 15px;
-      line-height: 1;
-      background-color: transparent;
-      border: none;
-      font-size: 30px;
-      font-weight: bold;
-      color: @darkred;
+	.button-wrapper {
+		margin: @navbar-content-margin 0 0 0;
+		padding: 0 0 0 15px;
 
-      &.btn-ssl {
-        font-size: 23px;
-        padding-top: 5px;
+		> .btn {
+			height: @navbar-content-height;
+			padding: 0;
+			margin: 3px 0 0 15px;
+			line-height: 1;
+			background-color: transparent;
+			border: none;
+			font-size: 30px;
+			font-weight: bold;
+			color: @darkred;
 
-        &.btn-warning {
-          color: lightgray;
-        }
-      }
-    }
-  }
+			&.btn-ssl {
+				font-size: 26px;
+				padding-top: 5px;
+
+				&.btn-warning {
+					color: lightgray;
+				}
+			}
+		}
+	}
 }
 
 .overview {
