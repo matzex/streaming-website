@@ -180,11 +180,11 @@ class Room
 	}
 
 	public function getHLSPlaylistUrl() {
-		$this->getCdnBaseUrl().'/hls/'.rawurlencode($this->getStream()).'_native.m3u8';
+		return $this->getCdnBaseUrl().'/hls/'.rawurlencode($this->getStream()).'_native.m3u8';
 	}
 
 	public function getDashManifestUrl() {
-		$this->getCdnBaseUrl().'/dash/'.rawurlencode($this->getStream()).'/manifest.mpd';
+		return $this->getCdnBaseUrl().'/dash/'.rawurlencode($this->getStream()).'/manifest.mpd';
 	}
 
 	public function getDashTech() {
