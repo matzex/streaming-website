@@ -80,9 +80,13 @@ body {
   background-color: @bg;
 
 	// break here and adjust padding since the navbar becomes two rows here
+	// depends on banner image width (with tls logo)
 	@media (max-width: 658px) {
-		// 5opx is regular padding
-		padding: 70px 0 30px 0;
+		padding: 110px 0 30px 0;
+
+		&.overview {
+			padding: 70px 0 30px 0;
+		}
 	}
 
   a[href],
@@ -99,13 +103,11 @@ body {
     margin: @navbar-height 0 15px 0;
     text-align: center;
 
-    @media (max-width: @screen-xs-max) {
       img {
 				max-width: 80%;
         height: auto;
       }
     }
-  }
 
   &.multiview {
     .cell {
@@ -170,7 +172,7 @@ nav {
 
   // on mobile device, ceneter the font element and remove
   // the voctocat icon, align utilities icons right
-  @media (max-width: @screen-xs-max) {
+  @media (max-width: @screen-xs-min) {
     .navbar-header {
       .navbar-brand {
         margin: @navbar-content-margin 0 0 0;
@@ -204,7 +206,7 @@ nav {
 
       &.btn-ssl {
         font-size: 26px;
-        padding-top: 5px;
+        padding-top: 6px;
 
         &.btn-warning {
           color: lightgray;
