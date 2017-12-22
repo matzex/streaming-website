@@ -79,9 +79,8 @@
 body {
 	background-color: @bg;
 
-	// negate the the 120px from structure since we use margin on the
-	// banner instead
-	@media (max-width: @screen-xs-min) {
+	// break here and adjust padding since the navbar becomes two rows here
+	@media (max-width: 650px) {
 		// 5opx is regular padding
 		padding: 70px 0 30px 0;
 	}
@@ -155,7 +154,7 @@ nav {
 		.navbar-brand {
 			.svg-replace("assets/min/f-34c3_translations.svg");
 
-			width: 515px;
+			width: 415px;
 			height: @navbar-content-height;
 			padding: 0;
 			margin: @navbar-content-margin 0 0 @navbar-content-margin;
@@ -174,7 +173,7 @@ nav {
 
 	// on mobile device, ceneter the font element and remove
 	// the voctocat icon, align utilities icons right
-	@media (max-width: @screen-xs-max) {
+	@media (max-width: @screen-xs-min) {
 		.navbar-header {
 			.navbar-brand {
 				// modification for translations page
