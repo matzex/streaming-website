@@ -548,10 +548,8 @@ $CONFIG['ROOMS'] = array(
 	),
 	 */
 
-
-# TODO check namen
 	'fresswuerfel' => array(
-		'DISPLAY' => 'Unwetterbar Fresswürfell (Halle 1 / 3)',
+		'DISPLAY' => 'Unwetterbar (Halle 1 / 3)',
 		'STREAM' => 'a1',
 		'MUSIC' => true,
 		'EMBED' => false,
