@@ -136,7 +136,7 @@ $CONFIG['OVERVIEW'] = array(
 //		),
 
 		'Live Music'  => array(
-			'fresswuerfel',
+			'unwetterbar',
 			'electric_cube',
 			'shell_beach',
 			'bar',
@@ -656,7 +656,7 @@ $CONFIG['ROOMS'] = array(
 //		),
 //	),
 
-	'fresswuerfel' => array(
+	'unwetterbar' => array(
 		'DISPLAY' => 'Unwetterbar (Halle 1 / 3)',
 		'STREAM' => 'a1',
 		'MUSIC' => true,
