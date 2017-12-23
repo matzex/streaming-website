@@ -126,10 +126,14 @@ $CONFIG['OVERVIEW'] = array(
 			'halld',
 		),
 
-		'Specials' => array(
-			'c3tv',
+//		'Specials' => array(
+//			'c3tv',
 //			'4k',
-		),
+//			'jh',
+//			'fsfe',
+//			'freifunk',
+//			'uewagen',
+//		),
 
 		'Live Music'  => array(
 			'fresswuerfel',
@@ -166,7 +170,7 @@ $CONFIG['ROOMS'] = array(
 		 * Event-Case in welchem Raum aufgebaut wird und wird üblicherweise von
 		 * s1 bis s5 durchnummeriert.
 		 */
-		'STREAM' => 'sX',
+		'STREAM' => 'sX', // TODO fix "s1"
 
 		/**
 		 * Stream-Vorschaubildchen auf der Übersichtsseite anzeigen
@@ -396,7 +400,7 @@ $CONFIG['ROOMS'] = array(
 	'hallb' => array(
 		'DISPLAY' => 'Hall Borg',
 		# Anita Borg
-		'STREAM' => 'sX',
+		'STREAM' => 'sX', // TODO fix "s2"
 		'PREVIEW' => true,
 		'TRANSLATION' => [
 			['endpoint' => 'translated',   'label' => 'Translated1'],
@@ -430,7 +434,7 @@ $CONFIG['ROOMS'] = array(
 	'hallc' => array(
 		'DISPLAY' => 'Hall Clarke',
 		# Joan Clarke
-		'STREAM' => 'sX',
+		'STREAM' => 'sX', // TODO fix "s3"
 		'PREVIEW' => true,
 		'TRANSLATION' => [
 			['endpoint' => 'translated',   'label' => 'Translated1'],
@@ -464,7 +468,7 @@ $CONFIG['ROOMS'] = array(
 	'halld' => array(
 		'DISPLAY' => 'Hall Dijkstra',
 		# Edsger Dijkstra
-		'STREAM' => 'sX',
+		'STREAM' => 'sX', // TODO fix "s4"
 		'PREVIEW' => true,
 		'TRANSLATION' => [
 			['endpoint' => 'translated',   'label' => 'Translated'],
@@ -494,59 +498,163 @@ $CONFIG['ROOMS'] = array(
 		),
 	),
 
-	'c3tv' => array(
-		'DISPLAY' => 'c3tv.de',
-		# danimo, moe
-		'STREAM' => 'sX', # TODO fix
-		'PREVIEW' => true, # TODO check / run downloader on transcorder
-		'TRANSLATION' => false,
-		'SD_VIDEO' => true,
-		'HD_VIDEO' => true,
-		'DASH' => false,
-		'AUDIO' => true,
-		'SLIDES' => false,
-		'MUSIC' => false,
-
-		'SCHEDULE' => false,
-		'FEEDBACK' => false,
-		'SUBTITLES' => false,
-		'SUBTITLES_ROOM_ID' => 2,
-		'EMBED' => true,
-		'IRC' => false,
-		'TWITTER' => true,
-		'TWITTER_CONFIG' => array(
-			'DISPLAY' => '@c3tv_de on twitter',
-			'TEXT'    => '@c3tv_de',
-		),
-	),
-
-	/*
-	'4k' => array(
-		'STREAM' => 'sX', # TODO fix
-		'DISPLAY' => '4k – Hall Dijkstra',
-		'PREVIEW' => true, # TODO check / run downloader on transcorder
-		'TRANSLATION' => false,
-		'SD_VIDEO' => false,
-		'HD_VIDEO' => true,
-		'DASH' => false,
-		'AUDIO' => false,
-		'SLIDES' => false,
-		'MUSIC' => false,
-
-		'SCHEDULE' => true,
-		'SCHEDULE_NAME' => 'Saal Dijkstra',
-		'FEEDBACK' => true,
-		'SUBTITLES' => false,
-		'SUBTITLES_ROOM_ID' => 2,
-		'EMBED' => false,
-		'IRC' => false,
-		'TWITTER' => false,
-		'TWITTER_CONFIG' => array(
-			'DISPLAY' => '#halld #4k @ twitter',
-			'TEXT'    => '#34C3 #halld #4k',
-		),
-	),
-	 */
+//
+//	'4k' => array(
+//		'STREAM' => 'sX', # TODO fix 's4k'
+//		'DISPLAY' => '4k – Hall Dijkstra (experiment)',
+//		'PREVIEW' => true, # TODO check / run downloader on transcorder
+//		'TRANSLATION' => false,
+//		'SD_VIDEO' => false,
+//		'HD_VIDEO' => true,
+//		'DASH' => false,
+//		'AUDIO' => false,
+//		'SLIDES' => false,
+//		'MUSIC' => false,
+//
+//		'SCHEDULE' => true,
+//		'SCHEDULE_NAME' => 'Saal Dijkstra',
+//		'FEEDBACK' => true,
+//		'SUBTITLES' => false,
+//		'SUBTITLES_ROOM_ID' => 2,
+//		'EMBED' => false,
+//		'IRC' => false,
+//		'TWITTER' => false,
+//		'TWITTER_CONFIG' => array(
+//			'DISPLAY' => '#halld #4k @ twitter',
+//			'TEXT'    => '#34C3 #halld #4k',
+//		),
+//	),
+//
+//	'c3tv' => array(
+//		'DISPLAY' => 'c3tv.de',
+//		# danimo, moe
+//		'STREAM' => 'sX', # TODO fix "sc3tv"
+//		'PREVIEW' => true, # TODO check / run downloader on transcorder
+//		'TRANSLATION' => false,
+//		'SD_VIDEO' => true,
+//		'HD_VIDEO' => true,
+//		'DASH' => false,
+//		'AUDIO' => true,
+//		'SLIDES' => false,
+//		'MUSIC' => false,
+//
+//		'SCHEDULE' => false,
+//		'FEEDBACK' => false,
+//		'SUBTITLES' => false,
+//		'SUBTITLES_ROOM_ID' => 2,
+//		'EMBED' => true,
+//		'IRC' => false,
+//		'TWITTER' => true,
+//		'TWITTER_CONFIG' => array(
+//			'DISPLAY' => '@c3tv_de on twitter',
+//			'TEXT'    => '@c3tv_de',
+//		),
+//	),
+//
+//	'jh' => array(
+//		'DISPLAY' => 'Jugendhackt Eßzimmer',
+//		// https://events.ccc.de/congress/2017/wiki/index.php/Room:Jugendhackt_E%C3%9Fzimmer
+//		'STREAM' => 'sX', # TODO fix "sjh"
+//		'PREVIEW' => true, # TODO check / run downloader on transcorder
+//		'TRANSLATION' => false,
+//		'SD_VIDEO' => true,
+//		'HD_VIDEO' => true,
+//		'DASH' => false,
+//		'AUDIO' => true,
+//		'SLIDES' => false,
+//		'MUSIC' => false,
+//
+//		'SCHEDULE' => false,
+//		'FEEDBACK' => false,
+//		'SUBTITLES' => false,
+//		'SUBTITLES_ROOM_ID' => 2,
+//		'EMBED' => true,
+//		'IRC' => false,
+//		'TWITTER' => false,
+//		'TWITTER_CONFIG' => array(
+//			'DISPLAY' => '@jugendhackt on twitter',
+//			'TEXT'    => '@jugendhackt ',
+//		),
+//	),
+//
+//	'fsfe' => array(
+//		'DISPLAY' => 'FSFE',
+//		// https://events.ccc.de/congress/2017/wiki/index.php/Assembly:Free_Software_Foundation_Europe
+//		'STREAM' => 'sX', # TODO fix "sfsfe"
+//		'PREVIEW' => true, # TODO check / run downloader on transcorder
+//		'TRANSLATION' => false,
+//		'SD_VIDEO' => true,
+//		'HD_VIDEO' => true,
+//		'DASH' => false,
+//		'AUDIO' => true,
+//		'SLIDES' => false,
+//		'MUSIC' => false,
+//
+//		'SCHEDULE' => false,
+//		'FEEDBACK' => false,
+//		'SUBTITLES' => false,
+//		'SUBTITLES_ROOM_ID' => 2,
+//		'EMBED' => true,
+//		'IRC' => false,
+//		'TWITTER' => true,
+//		'TWITTER_CONFIG' => array(
+//			'DISPLAY' => '@fsfe #34c3 on twitter',
+//			'TEXT'    => '@fsfe #34c3',
+//		),
+//	),
+//
+//	'freifunk' => array(
+//		'DISPLAY' => 'Freifunk',
+//		// https://events.ccc.de/congress/2017/wiki/index.php/Assembly:Freifunk
+//		// https://wiki.freifunk.net/34c3/Timetable
+//		// https://frab.txtfile.eu/en/34c3-ffc/public/schedule
+//		'STREAM' => 'sX', # TODO fix "sfreifunk"
+//		'PREVIEW' => true, # TODO check / run downloader on transcorder
+//		'TRANSLATION' => false,
+//		'SD_VIDEO' => true,
+//		'HD_VIDEO' => true,
+//		'DASH' => false,
+//		'AUDIO' => true,
+//		'SLIDES' => false,
+//		'MUSIC' => false,
+//
+//		'SCHEDULE' => false,
+//		'FEEDBACK' => false,
+//		'SUBTITLES' => false,
+//		'SUBTITLES_ROOM_ID' => 2,
+//		'EMBED' => true,
+//		'IRC' => false,
+//		'TWITTER' => true,
+//		'TWITTER_CONFIG' => array(
+//			'DISPLAY' => '#ff34c3 on twitter',
+//			'TEXT'    => '#ff34c3',
+//		),
+//	),
+//
+//	'uewagen' => array(
+//		'DISPLAY' => 'FeM Ü-Wagen',
+//		'STREAM' => 'sX', # TODO fix "suewagen"
+//		'PREVIEW' => true, # TODO check / run downloader on transcorder
+//		'TRANSLATION' => false,
+//		'SD_VIDEO' => true,
+//		'HD_VIDEO' => true,
+//		'DASH' => false,
+//		'AUDIO' => true,
+//		'SLIDES' => false,
+//		'MUSIC' => false,
+//
+//		'SCHEDULE' => false,
+//		'FEEDBACK' => false,
+//		'SUBTITLES' => false,
+//		'SUBTITLES_ROOM_ID' => 2,
+//		'EMBED' => true,
+//		'IRC' => false,
+//		'TWITTER' => true,
+//		'TWITTER_CONFIG' => array(
+//			'DISPLAY' => '@fem_office on twitter',
+//			'TEXT'    => '@fem_office',
+//		),
+//	),
 
 	'fresswuerfel' => array(
 		'DISPLAY' => 'Unwetterbar (Halle 1 / 3)',
