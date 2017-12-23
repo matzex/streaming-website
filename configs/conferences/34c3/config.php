@@ -128,12 +128,12 @@ $CONFIG['OVERVIEW'] = array(
 
 //		'Specials' => array(
 //			'c3tv',
-//			'4k',
 //			'jh',
 //			'fsfe',
 //			'freifunk',
 //			'uewagen',
 //		),
+// Do not add "4k" here, see 34c3/overview.phtml - sorry
 
 		'Live Music'  => array(
 			'unwetterbar',
@@ -498,33 +498,6 @@ $CONFIG['ROOMS'] = array(
 		),
 	),
 
-//
-//	'4k' => array(
-//		'STREAM' => 'sX', # TODO fix 's4k'
-//		'DISPLAY' => '4k – Hall Dijkstra (experiment)',
-//		'PREVIEW' => true, # TODO check / run downloader on transcorder
-//		'TRANSLATION' => false,
-//		'SD_VIDEO' => false,
-//		'HD_VIDEO' => true,
-//		'DASH' => false,
-//		'AUDIO' => false,
-//		'SLIDES' => false,
-//		'MUSIC' => false,
-//
-//		'SCHEDULE' => true,
-//		'SCHEDULE_NAME' => 'Saal Dijkstra',
-//		'FEEDBACK' => true,
-//		'SUBTITLES' => false,
-//		'SUBTITLES_ROOM_ID' => 2,
-//		'EMBED' => false,
-//		'IRC' => false,
-//		'TWITTER' => false,
-//		'TWITTER_CONFIG' => array(
-//			'DISPLAY' => '#halld #4k @ twitter',
-//			'TEXT'    => '#34C3 #halld #4k',
-//		),
-//	),
-//
 //	'c3tv' => array(
 //		'DISPLAY' => 'c3tv.de',
 //		# danimo, moe
@@ -655,6 +628,37 @@ $CONFIG['ROOMS'] = array(
 //			'TEXT'    => '@fem_office',
 //		),
 //	),
+
+
+//
+// NOT ACTIVATED HERE, SET IN OVERVIEW.HTML
+//
+// 	'4k' => array(
+// 		'STREAM' => 's4k', # TODO fix 's4k'
+// 		'DISPLAY' => '4k – Hall Dijkstra (experiment)',
+// 		'PREVIEW' => true, # TODO check / run downloader on transcorder
+// 		'TRANSLATION' => false,
+// 		'SD_VIDEO' => false,
+// 		'HD_VIDEO' => true,
+// 		'DASH' => false,
+// 		'AUDIO' => false,
+// 		'SLIDES' => false,
+// 		'MUSIC' => false,
+//
+// 		'SCHEDULE' => true,
+// 		'SCHEDULE_NAME' => 'Saal Dijkstra',
+// 		'FEEDBACK' => true,
+// 		'SUBTITLES' => false,
+// 		'SUBTITLES_ROOM_ID' => 2,
+// 		'EMBED' => false,
+// 		'IRC' => false,
+// 		'TWITTER' => false,
+// 		'TWITTER_CONFIG' => array(
+// 			'DISPLAY' => '#halld #4k @ twitter',
+// 			'TEXT'    => '#34C3 #halld #4k',
+// 		),
+// 	),
+//
 
 	'unwetterbar' => array(
 		'DISPLAY' => 'Unwetterbar (Halle 1 / 3)',
