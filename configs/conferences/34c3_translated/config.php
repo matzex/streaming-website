@@ -4,8 +4,8 @@ $CONFIG['CONFERENCE'] = array(
 	/**
 	 * Customize the base stream URL, without slash at the end
 	 */
-	'CDN_BASE_URL' => 'http://cdn.c3voc.de',
-	//'CDN_BASE_URL' => 'http://translations.ccl.c3voc.de',
+	//'CDN_BASE_URL' => 'http://cdn.c3voc.de',
+	'CDN_BASE_URL' => 'http://translations.ccl.c3voc.de',
 
 	/**
 	 * Der Startzeitpunkt der Konferenz als Unix-Timestamp. Befinden wir uns davor, wird die Closed-Seite
