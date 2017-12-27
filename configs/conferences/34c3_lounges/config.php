@@ -8,7 +8,7 @@ $CONFIG['CONFERENCE'] = array(
 	 * Wird dieser Zeitpunkt nicht angegeben, gilt die Konferenz immer als angefangen. (Siehe aber ENDS_AT
 	 * und CLOSED weiter unten)
 	 */
-	'STARTS_AT' => strtotime("2017-12-27 16:00"),
+	'STARTS_AT' => strtotime("2017-12-27 18:00"),
 
 	/**
 	 * Der Endzeitpunkt der Konferenz als Unix-Timestamp. Befinden wir uns danach, wird eine Danke-Und-Kommen-Sie-
@@ -136,28 +136,28 @@ $CONFIG['OVERVIEW'] = array(
 $CONFIG['ROOMS'] = array(
 	'fresswuerfel' => array(
 		'DISPLAY' => 'Unwetterbar (Halle 1 / 3)',
-		'STREAM' => 'a1',
+		'STREAM' => 'a2',
 		'MUSIC' => true,
 		'EMBED' => false,
 		'DEFAULT_SELECTION' => '#switcher',
 	),
 	'electric_cube' => array(
 		'DISPLAY' => 'Electric Cube (Halle 2 / CCL)',
-		'STREAM' => 'a2',
+		'STREAM' => 'a1',
 		'MUSIC' => true,
 		'EMBED' => false,
 		'DEFAULT_SELECTION' => '#switcher',
 	),
 	'shell_beach' => array(
 		'DISPLAY' => 'Shell Beach (CCL unten)',
-		'STREAM' => 'a3',
+		'STREAM' => 'a4',
 		'MUSIC' => true,
 		'EMBED' => false,
 		'DEFAULT_SELECTION' => '#switcher',
 	),
 	'bar' => array(
 		'DISPLAY' => 'Bar (Halle 2)',
-		'STREAM' => 'a4',
+		'STREAM' => 'a3',
 		'MUSIC' => true,
 		'EMBED' => false,
 		'DEFAULT_SELECTION' => '#switcher',
