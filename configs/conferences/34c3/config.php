@@ -128,19 +128,19 @@ $CONFIG['OVERVIEW'] = array(
 
 //		'Specials' => array(
 //			'c3tv',
-//			'4k',
 //			'jh',
 //			'fsfe',
 //			'freifunk',
 //			'uewagen',
 //		),
+// Do not add "4k" here, see 34c3/overview.phtml - sorry
 
-		'Live Music'  => array(
-			'unwetterbar',
-			'electric_cube',
-			'shell_beach',
-			'bar',
-		),
+//		'Live Music'  => array(
+//			'unwetterbar',
+//			'electric_cube',
+//			'shell_beach',
+//			'bar',
+//		),
 	),
 );
 
@@ -170,7 +170,7 @@ $CONFIG['ROOMS'] = array(
 		 * Event-Case in welchem Raum aufgebaut wird und wird üblicherweise von
 		 * s1 bis s5 durchnummeriert.
 		 */
-		'STREAM' => 'sX', // TODO fix "s1"
+		'STREAM' => 's1',
 
 		/**
 		 * Stream-Vorschaubildchen auf der Übersichtsseite anzeigen
@@ -366,6 +366,9 @@ $CONFIG['ROOMS'] = array(
 		'IRC_CONFIG' => array(
 			'DISPLAY' => '#34C3-hall-a @ hackint', # TODO check
 			'URL'     => 'irc://irc.hackint.eu:6667/34C3-hall-a',
+			# https://orga.cccv.de/doku/33c3/signal_angels
+			# 34c3 TBD?
+			# Kontakt angeblich: https://orga.cccv.de/doku/user/ijon
 		),
 
 		/**
@@ -400,7 +403,7 @@ $CONFIG['ROOMS'] = array(
 	'hallb' => array(
 		'DISPLAY' => 'Hall Borg',
 		# Anita Borg
-		'STREAM' => 'sX', // TODO fix "s2"
+		'STREAM' => 's2',
 		'PREVIEW' => true,
 		'TRANSLATION' => [
 			['endpoint' => 'translated',   'label' => 'Translated1'],
@@ -434,7 +437,7 @@ $CONFIG['ROOMS'] = array(
 	'hallc' => array(
 		'DISPLAY' => 'Hall Clarke',
 		# Joan Clarke
-		'STREAM' => 'sX', // TODO fix "s3"
+		'STREAM' => 's3',
 		'PREVIEW' => true,
 		'TRANSLATION' => [
 			['endpoint' => 'translated',   'label' => 'Translated1'],
@@ -468,7 +471,7 @@ $CONFIG['ROOMS'] = array(
 	'halld' => array(
 		'DISPLAY' => 'Hall Dijkstra',
 		# Edsger Dijkstra
-		'STREAM' => 'sX', // TODO fix "s4"
+		'STREAM' => 's4',
 		'PREVIEW' => true,
 		'TRANSLATION' => [
 			['endpoint' => 'translated',   'label' => 'Translated'],
@@ -498,33 +501,6 @@ $CONFIG['ROOMS'] = array(
 		),
 	),
 
-//
-//	'4k' => array(
-//		'STREAM' => 'sX', # TODO fix 's4k'
-//		'DISPLAY' => '4k – Hall Dijkstra (experiment)',
-//		'PREVIEW' => true, # TODO check / run downloader on transcorder
-//		'TRANSLATION' => false,
-//		'SD_VIDEO' => false,
-//		'HD_VIDEO' => true,
-//		'DASH' => false,
-//		'AUDIO' => false,
-//		'SLIDES' => false,
-//		'MUSIC' => false,
-//
-//		'SCHEDULE' => true,
-//		'SCHEDULE_NAME' => 'Saal Dijkstra',
-//		'FEEDBACK' => true,
-//		'SUBTITLES' => false,
-//		'SUBTITLES_ROOM_ID' => 2,
-//		'EMBED' => false,
-//		'IRC' => false,
-//		'TWITTER' => false,
-//		'TWITTER_CONFIG' => array(
-//			'DISPLAY' => '#halld #4k @ twitter',
-//			'TEXT'    => '#34C3 #halld #4k',
-//		),
-//	),
-//
 //	'c3tv' => array(
 //		'DISPLAY' => 'c3tv.de',
 //		# danimo, moe
@@ -656,31 +632,62 @@ $CONFIG['ROOMS'] = array(
 //		),
 //	),
 
-	'unwetterbar' => array(
-		'DISPLAY' => 'Unwetterbar (Halle 1 / 3)',
-		'STREAM' => 'a1',
-		'MUSIC' => true,
-		'EMBED' => false,
-	),
-	'electric_cube' => array(
-		'DISPLAY' => 'Electric Cube (Halle 2 / CCL)',
-		'STREAM' => 'a2',
-		'MUSIC' => true,
-		'EMBED' => false,
-	),
-	'shell_beach' => array(
-		'DISPLAY' => 'Shell Beach (CCL unten)',
-		'STREAM' => 'a3',
-		'MUSIC' => true,
-		'EMBED' => false,
-	),
-	'bar' => array(
-		'DISPLAY' => 'Bar (Halle 2)',
-		'STREAM' => 'a4',
-		'MUSIC' => true,
-		'EMBED' => false,
-	),
 
+//
+// NOT ACTIVATED HERE, SET IN OVERVIEW.HTML
+//
+// 	'4k' => array(
+// 		'STREAM' => 's4k', # TODO fix 's4k'
+// 		'DISPLAY' => '4k – Hall Dijkstra (experiment)',
+// 		'PREVIEW' => true, # TODO check / run downloader on transcorder
+// 		'TRANSLATION' => false,
+// 		'SD_VIDEO' => false,
+// 		'HD_VIDEO' => true,
+// 		'DASH' => false,
+// 		'AUDIO' => false,
+// 		'SLIDES' => false,
+// 		'MUSIC' => false,
+//
+// 		'SCHEDULE' => true,
+// 		'SCHEDULE_NAME' => 'Saal Dijkstra',
+// 		'FEEDBACK' => true,
+// 		'SUBTITLES' => false,
+// 		'SUBTITLES_ROOM_ID' => 2,
+// 		'EMBED' => false,
+// 		'IRC' => false,
+// 		'TWITTER' => false,
+// 		'TWITTER_CONFIG' => array(
+// 			'DISPLAY' => '#halld #4k @ twitter',
+// 			'TEXT'    => '#34C3 #halld #4k',
+// 		),
+// 	),
+//
+
+//	'unwetterbar' => array(
+//		'DISPLAY' => 'Unwetterbar (Halle 1 / 3)',
+//		'STREAM' => 'a1',
+//		'MUSIC' => true,
+//		'EMBED' => false,
+//	),
+//	'electric_cube' => array(
+//		'DISPLAY' => 'Electric Cube (Halle 2 / CCL)',
+//		'STREAM' => 'a2',
+//		'MUSIC' => true,
+//		'EMBED' => false,
+//	),
+//	'shell_beach' => array(
+//		'DISPLAY' => 'Shell Beach (CCL unten)',
+//		'STREAM' => 'a3',
+//		'MUSIC' => true,
+//		'EMBED' => false,
+//	),
+//	'bar' => array(
+//		'DISPLAY' => 'Bar (Halle 2)',
+//		'STREAM' => 'a4',
+//		'MUSIC' => true,
+//		'EMBED' => false,
+//	),
+//
 );
 
 

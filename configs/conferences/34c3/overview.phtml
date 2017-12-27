@@ -1,0 +1,178 @@
+<? include("$assemblies/banner.phtml") ?>
+
+<div class="container">
+	<? $i = 0; foreach($overview->getGroups() as $group => $rooms): ?>
+		<? if($group): ?>
+			<div class="row group group-<?=h(slugify($group))?>">
+				<div class="col-xs-12">
+					<h2><span><?=h($group)?></span></h2>
+				</div>
+			</div>
+		<? endif ?>
+		<div class="row room-group room-group-n<?=h($i++)?> room-group-<?=h(slugify($group))?>">
+
+			<? /* Forcefully add 4k stream block here in group "specials" BEGIN */ ?>
+			<? $fourkactive = false; ?>
+			<? if ($fourkactive && slugify($group) === "specials"): ?>
+				<div class="room room-4k clearfix col-xs-12 col-md-6 has-preview has-schedule">
+						<a href="/configs/conferences/34c3/assets/4k.html">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<div class="panel-title">
+									4k – Hall Dijkstra (experiment)
+								</div>
+							</div>
+
+							<div class="panel-body">
+									<img
+										class="preview"
+										src="/thumbs/s4.png"
+										alt="4k Dijkstra"
+										width="213" height="120"
+									/>
+
+									<? $upcoming = @$upcomingTalksPerRoom[ 'Saal Dijkstra' ] ?: [] ?>
+									<div class="program-schedule">
+										<div class="talk current-talk" title="<?=h(@$upcoming['current']['title'] ?: 'none') ?>">
+                    <strong>Now (since <?=date('G:i', @$upcoming['current']['start']) ?>):</strong><br/>
+											<span class="t"><?=h(@$upcoming['current']['title'] ?: 'none') ?></span>
+										</div>
+
+										<div class="talk next-talk" title="<?=h(@$upcoming['next']['title'] ?: 'none') ?>">
+											<strong>Next Talk (<?=date('G:i', @$upcoming['next']['start']) ?>):</strong><br/>
+											<span class="t"><?=h(@$upcoming['next']['title'] ?: 'none') ?></span>
+										</div>
+									</div>
+							</div>
+						</div>
+					</a>
+				</div>
+
+				<? /* Fix count - just used for width calculation ... ui ui ui */ ?>
+				<? $count = count($rooms) + 1; $idx = 0 ?>
+			<? else: ?>
+				<? $count = count($rooms); $idx = 0 ?>
+			<? endif ?>
+			<? /* END Forcefully add 4k stream block here in group "specials" */ ?>
+			
+			<? foreach($rooms as $room): ?>
+				<div class="
+					room
+					room-<?=h($room->getSlug())?>
+					clearfix
+
+					<? /* when the count is odd and this is the last item - make it full width */ ?>
+					<? if( ($count % 2 == 1) && ($idx == $count - 1) ): ?>
+						wide
+						col-xs-12
+					<? elseif($room->requestsWide()): ?>
+						<? $count++; $idx++ ?>
+						wide
+						col-xs-12
+					<? else: ?>
+						narrow
+						<? if($room->hasPreview() && $room->hasSchedule()): ?>
+							col-md-6
+						<? else: ?>
+							col-sm-6
+						<? endif ?>
+					<? endif ?>
+
+					<? if($room->hasPreview()): ?>
+						has-preview
+					<? endif ?>
+
+					<? if($room->hasSchedule()): ?>
+						has-schedule
+					<? endif ?>
+				">
+
+						<a href="<?=h($room->getLink())?>">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<div class="panel-title">
+									<?=h($room->getDisplay())?>
+								</div>
+							</div>
+
+							<div class="panel-body">
+								<? if($room->hasPreview()): ?>
+
+									<img
+										class="preview"
+										src="<?=h($room->getThumb())?>"
+										alt="<?=h($room->getDisplay())?>"
+										width="213" height="120"
+									/>
+
+								<? else: ?>
+
+									<h2><?=h($room->getDisplay())?></h2>
+
+								<? endif ?>
+
+								<? if($room->hasSchedule()): ?>
+									<? $upcoming = @$upcomingTalksPerRoom[ $room->getScheduleName() ] ?: [] ?>
+									<div class="program-schedule">
+										<div class="talk current-talk" title="<?=h(@$upcoming['current']['title'] ?: 'none') ?>">
+                    <strong>Now (since <?=date('G:i', @$upcoming['current']['start']) ?>):</strong><br/>
+											<span class="t"><?=h(@$upcoming['current']['title'] ?: 'none') ?></span>
+										</div>
+
+										<div class="talk next-talk" title="<?=h(@$upcoming['next']['title'] ?: 'none') ?>">
+											<strong>Next Talk (<?=date('G:i', @$upcoming['next']['start']) ?>):</strong><br/>
+											<span class="t"><?=h(@$upcoming['next']['title'] ?: 'none') ?></span>
+										</div>
+									</div>
+								<? endif ?>
+							</div>
+						</div>
+					</a>
+				</div>
+				<? $idx++ ?>
+			<? endforeach ?>
+		</div>
+	<? endforeach ?>
+
+	<? if($conference->hasReleases() || $conference->hasRelive()): ?>
+		<?
+			$class = ($conference->hasReleases() && $conference->hasRelive()) ?
+				// both enabled
+				'col-sm-6 col-xs-12' :
+
+				// only one of both enabled
+				'col-xs-12';
+		?>
+		<div class="row recordings">
+
+			<div class="col-xs-12">
+				<h2><span>Recordings</span></h2>
+			</div>
+
+			<? if($conference->hasReleases()): ?>
+				<div class="<?=h($class)?>">
+					<div class="panel panel-primary">
+						<div class="panel-body">
+							<a href="<?=h($conference->getReleasesUrl())?>">
+								<span class="fa fa-video-camera"></span> Releases
+							</a>
+						</div>
+					</div>
+				</div>
+			<? endif ?>
+
+			<? if($conference->hasRelive()): ?>
+				<div class="<?=h($class)?>">
+					<div class="panel panel-primary">
+						<div class="panel-body">
+							<a href="<?=h($conference->getReliveUrl())?>">
+								<span class="fa fa-play-circle"></span> ReLive
+							</a>
+						</div>
+					</div>
+				</div>
+			<? endif ?>
+
+		</div>
+	<? endif ?>
+</div>

@@ -11,9 +11,34 @@
  interference with the new dash-player.
 -->
 <script type="text/javascript">
-	var nativeHLS = document.createElement('video').canPlayType('application/vnd.apple.mpegURL') != "";
-	var player = new Clappr.Player({
-			source: nativeHLS ? '<?=h($room->getHLSPlaylistUrl())?>' : '<?=h($room->getDashManifestUrl())?>',
+(function(){
+	// Select relay from cdn url, retry indefinitely
+	var selectRelay = function(url, cb) {
+		$.ajax({
+			url: url,
+			cache: false,
+			dataType: "text",
+			timeout: 3000,
+			success: function(result, state, xhr) {
+				var relay = xhr.getResponseHeader("X-Host");
+				if (!relay)
+					setTimeout(selectRelay.bind(null, url, cb), 2000);
+
+				console.log("selected relay", relay);
+				var proto = url.match(/^https?:\/\//),
+					path = "/" + url.split("/").slice(3).join("/");
+				cb(proto + relay + path)
+			},
+			error: function(err) {
+				console.error("Error while selecting relay: ", err.status, err.statusText)
+				setTimeout(selectRelay.bind(null, url, cb), 2000);
+			}
+		});
+	}
+
+	var createPlayer = function(url) {
+		var player = new Clappr.Player({
+			source: url,
 			width: "100%",
 			plugins: [DashShakaPlayback, LevelSelector, AudioSelector],
 			shakaConfiguration: {
@@ -27,6 +52,12 @@
 			},
 			levelSelectorConfig: {
 				labels: {
+					// HLS
+					0: 'Slides',
+					1: 'SD',
+					2: 'HD',
+
+					// DASH
 					7: 'HD',
 					8: 'SD',
 					9: 'Slides',
@@ -41,6 +72,15 @@
 			autoPlay: true,
 			parentId: '#player'
 		});
+	}
+
+	// Detect WebM capability, Select relay, Create player
+	var hasWebM = document.createElement('video').canPlayType('video/webm') != "";
+	var cdnUrl = hasWebM ? '<?=h($room->getDashManifestUrl())?>' : '<?=h($room->getHLSPlaylistUrl())?>';
+	selectRelay(cdnUrl, function(relayUrl) {
+		createPlayer(relayUrl);
+	});
+}());
 </script>
 
 

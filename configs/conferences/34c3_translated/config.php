@@ -5,6 +5,7 @@ $CONFIG['CONFERENCE'] = array(
 	 * Customize the base stream URL, without slash at the end
 	 */
 	'CDN_BASE_URL' => 'http://cdn.c3voc.de',
+	//'CDN_BASE_URL' => 'http://translations.ccl.c3voc.de',
 
 	/**
 	 * Der Startzeitpunkt der Konferenz als Unix-Timestamp. Befinden wir uns davor, wird die Closed-Seite
@@ -93,7 +94,7 @@ $CONFIG['CONFERENCE'] = array(
 	 *
 	 * Wird diese Zeile auskommentiert, wird kein Banner ausgegeben.
 	 */
-	'BANNER_HTML' => '<img src="configs/conferences/34c3/assets/min/banner.svg" width="519px" height="auto" alt="tuwat!"/><br><p>This page is for on-site translations only – please visit <b><a href="https://streaming.media.ccc.de/34c3/">streaming.media.ccc.de</a></b> to see all features.</p>',
+	'BANNER_HTML' => '<img src="configs/conferences/34c3/assets/min/banner.svg" width="519px" height="auto" alt="tuwat!"/><br><p>This page is for <b>on-site</b> translations only – please visit <b><a href="https://streaming.media.ccc.de/34c3/">streaming.media.ccc.de</a></b> to see all features.</p>',
 
 	/**
 	 * Link zu den Recordings
@@ -159,7 +160,7 @@ $CONFIG['ROOMS'] = array(
 		 * Event-Case in welchem Raum aufgebaut wird und wird üblicherweise von
 		 * s1 bis s5 durchnummeriert.
 		 */
-		'STREAM' => 'sX',
+		'STREAM' => 's1',
 
 		/**
 		 * Stream-Vorschaubildchen auf der Übersichtsseite anzeigen
@@ -400,7 +401,7 @@ $CONFIG['ROOMS'] = array(
 	'hallb' => array(
 		'DISPLAY' => 'Hall Borg',
 		# Anita Borg
-		'STREAM' => 'sX',
+		'STREAM' => 's2',
 		'PREVIEW' => true,
 		'TRANSLATION' => [
 			['endpoint' => 'translated',   'label' => 'Translated1'],
@@ -436,7 +437,7 @@ $CONFIG['ROOMS'] = array(
 	'hallc' => array(
 		'DISPLAY' => 'Hall Clarke',
 		# Joan Clarke
-		'STREAM' => 'sX',
+		'STREAM' => 's3',
 		'PREVIEW' => true,
 		'TRANSLATION' => [
 			['endpoint' => 'translated',   'label' => 'Translated1'],
@@ -472,7 +473,7 @@ $CONFIG['ROOMS'] = array(
 	'halld' => array(
 		'DISPLAY' => 'Hall Dijkstra',
 		# Edsger Dijkstra
-		'STREAM' => 'sX',
+		'STREAM' => 's4',
 		'PREVIEW' => true,
 		'TRANSLATION' => [
 			['endpoint' => 'translated',   'label' => 'Translated'],
