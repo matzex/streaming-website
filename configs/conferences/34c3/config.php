@@ -126,6 +126,11 @@ $CONFIG['OVERVIEW'] = array(
 			'halld',
 		),
 
+		'Specials' => array(
+			'c3tv',
+			'freifunk',
+		),
+
 //		'Specials' => array(
 //			'c3tv',
 //			'jh',
@@ -510,31 +515,31 @@ $CONFIG['ROOMS'] = array(
 		),
 	),
 
-//	'c3tv' => array(
-//		'DISPLAY' => 'c3tv.de',
-//		# danimo, moe
-//		'STREAM' => 'sX', # TODO fix "sc3tv"
-//		'PREVIEW' => true, # TODO check / run downloader on transcorder
-//		'TRANSLATION' => false,
-//		'SD_VIDEO' => true,
-//		'HD_VIDEO' => true,
-//		'DASH' => false,
-//		'AUDIO' => true,
-//		'SLIDES' => false,
-//		'MUSIC' => false,
-//
-//		'SCHEDULE' => false,
-//		'FEEDBACK' => false,
-//		'SUBTITLES' => false,
-//		'SUBTITLES_ROOM_ID' => 2,
-//		'EMBED' => true,
-//		'IRC' => false,
-//		'TWITTER' => true,
-//		'TWITTER_CONFIG' => array(
-//			'DISPLAY' => '@c3tv_de on twitter',
-//			'TEXT'    => '@c3tv_de',
-//		),
-//	),
+	'c3tv' => array(
+		'DISPLAY' => 'c3tv.de',
+		# danimo, moe
+		'STREAM' => 'sc3tv',
+		'PREVIEW' => true,
+		'TRANSLATION' => false,
+		'SD_VIDEO' => true,
+		'HD_VIDEO' => true,
+		'DASH' => false,
+		'AUDIO' => true,
+		'SLIDES' => false,
+		'MUSIC' => false,
+
+		'SCHEDULE' => false,
+		'FEEDBACK' => false,
+		'SUBTITLES' => false,
+		'SUBTITLES_ROOM_ID' => 2,
+		'EMBED' => true,
+		'IRC' => false,
+		'TWITTER' => true,
+		'TWITTER_CONFIG' => array(
+			'DISPLAY' => '@c3tv_de on twitter',
+			'TEXT'    => '@c3tv_de',
+		),
+	),
 //
 //	'jh' => array(
 //		'DISPLAY' => 'Jugendhackt Eßzimmer',
@@ -588,33 +593,33 @@ $CONFIG['ROOMS'] = array(
 //		),
 //	),
 //
-//	'freifunk' => array(
-//		'DISPLAY' => 'Freifunk',
-//		// https://events.ccc.de/congress/2017/wiki/index.php/Assembly:Freifunk
-//		// https://wiki.freifunk.net/34c3/Timetable
-//		// https://frab.txtfile.eu/en/34c3-ffc/public/schedule
-//		'STREAM' => 'sX', # TODO fix "sfreifunk"
-//		'PREVIEW' => true, # TODO check / run downloader on transcorder
-//		'TRANSLATION' => false,
-//		'SD_VIDEO' => true,
-//		'HD_VIDEO' => true,
-//		'DASH' => false,
-//		'AUDIO' => true,
-//		'SLIDES' => false,
-//		'MUSIC' => false,
-//
-//		'SCHEDULE' => false,
-//		'FEEDBACK' => false,
-//		'SUBTITLES' => false,
-//		'SUBTITLES_ROOM_ID' => 2,
-//		'EMBED' => true,
-//		'IRC' => false,
-//		'TWITTER' => true,
-//		'TWITTER_CONFIG' => array(
-//			'DISPLAY' => '#ff34c3 on twitter',
-//			'TEXT'    => '#ff34c3',
-//		),
-//	),
+	'freifunk' => array(
+		'DISPLAY' => 'Freifunk',
+		// https://events.ccc.de/congress/2017/wiki/index.php/Assembly:Freifunk
+		// https://wiki.freifunk.net/34c3/Timetable
+		// https://frab.txtfile.eu/en/34c3-ffc/public/schedule
+		'STREAM' => 'sfreifunk', # TODO fix "sfreifunk"
+		'PREVIEW' => true, # TODO check / run downloader on transcorder
+		'TRANSLATION' => false,
+		'SD_VIDEO' => true,
+		'HD_VIDEO' => true,
+		'DASH' => false,
+		'AUDIO' => true,
+		'SLIDES' => false,
+		'MUSIC' => false,
+
+		'SCHEDULE' => false,
+		'FEEDBACK' => false,
+		'SUBTITLES' => false,
+		'SUBTITLES_ROOM_ID' => 2,
+		'EMBED' => true,
+		'IRC' => false,
+		'TWITTER' => true,
+		'TWITTER_CONFIG' => array(
+			'DISPLAY' => '#ff34c3 on twitter',
+			'TEXT'    => '#ff34c3',
+		),
+	),
 //
 //	'uewagen' => array(
 //		'DISPLAY' => 'FeM Ü-Wagen',
