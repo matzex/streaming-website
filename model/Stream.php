@@ -123,15 +123,19 @@ class Stream
 		]);
 	}
 
-	public function getVideoUrl($proto)
+	public function getVideoUrl($proto, $selection=null)
 	{
+		if (!$selection) {
+			$selection = $this->getSelection();
+		}
+
 		switch($proto)
 		{
 			case 'webm':
-				return $this->getCdnBaseUrl().'/'.rawurlencode($this->getRoom()->getStream()).'_'.rawurlencode($this->getLanguage()).'_'.rawurlencode($this->getSelection()).'.webm';
+				return $this->getCdnBaseUrl().'/'.rawurlencode($this->getRoom()->getStream()).'_'.rawurlencode($this->getLanguage()).'_'.rawurlencode($selection).'.webm';
 
 			case 'hls':
-				return $this->getCdnBaseUrl().'/hls/'.rawurlencode($this->getRoom()->getStream()).'_'.rawurlencode($this->getLanguage()).'_'.rawurlencode($this->getSelection()).'.m3u8';
+				return $this->getCdnBaseUrl().'/hls/'.rawurlencode($this->getRoom()->getStream()).'_'.rawurlencode($this->getLanguage()).'_'.rawurlencode($selection).'.m3u8';
 		}
 
 		return null;
