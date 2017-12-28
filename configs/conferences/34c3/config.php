@@ -166,6 +166,11 @@ $CONFIG['ROOMS'] = array(
 		// Douglas Adams
 
 		/**
+		 * Default-Tab für den Raum
+		 */
+		'DEFAULT_SELECTION' => 'dash',
+
+		/**
 		 * ID des Video/Audio-Streams. Die Stream-ID ist davon abhängig, welches
 		 * Event-Case in welchem Raum aufgebaut wird und wird üblicherweise von
 		 * s1 bis s5 durchnummeriert.
@@ -402,6 +407,7 @@ $CONFIG['ROOMS'] = array(
 
 	'hallb' => array(
 		'DISPLAY' => 'Hall Borg',
+		'DEFAULT_SELECTION' => 'dash',
 		# Anita Borg
 		'STREAM' => 's2',
 		'PREVIEW' => true,
@@ -436,6 +442,7 @@ $CONFIG['ROOMS'] = array(
 
 	'hallc' => array(
 		'DISPLAY' => 'Hall Clarke',
+		'DEFAULT_SELECTION' => 'dash',
 		# Joan Clarke
 		'STREAM' => 's3',
 		'PREVIEW' => true,
@@ -470,6 +477,7 @@ $CONFIG['ROOMS'] = array(
 
 	'halld' => array(
 		'DISPLAY' => 'Hall Dijkstra',
+		'DEFAULT_SELECTION' => 'dash',
 		# Edsger Dijkstra
 		'STREAM' => 's4',
 		'PREVIEW' => true,
